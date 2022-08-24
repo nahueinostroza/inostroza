@@ -1,12 +1,16 @@
 import './App.css';
 import NavBar from './components/Navbar';
+import ItemListContainer from './itemListContainer/itemListContainer';
 
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      <h1 className='text-blue-700'>XenEsport</h1>
+      <div>
+        
+      </div>
+    <ItemListContainer greeting="Si gana BOCA 50% de descuento"/>
     </div>
   );
 }
