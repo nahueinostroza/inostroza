@@ -15,9 +15,9 @@ function App() {
       <div>
       <Itemcount initial={1} stock={10} onAdd={onAdd}/>
       </div>
-      
     <ItemListContainer greeting="Si gana BOCA 50% de descuento"/>
     </div>
+    
 
 
   );
