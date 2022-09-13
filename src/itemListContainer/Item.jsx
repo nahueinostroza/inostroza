@@ -1,16 +1,16 @@
-const Item = ({productos, setCarrito, carrito}) => {
+const Item = ({producto, setCarrito, carrito}) => {
     return(
     <div>
-        <h3>{productos.title}</h3>
-        <img src={productos.thumbnail} alt=""/>
+        <h3>{producto.title}</h3>
+        <img src={producto.thumbnail} alt=""/>
         
 <div>
-<button onClick={() => {
+{/* <button onClick={() => {
     setCarrito([...carrito,productos]);
     console.log(carrito);
     }}>
         agregar Producto
-        </button>
+        </button> */}
         </div>
         </div>
         )

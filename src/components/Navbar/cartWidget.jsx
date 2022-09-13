@@ -1,7 +1,7 @@
 const CartWidget = () => {
 
 
-return <i class="ri-shopping-cart-line"/>
+return <i className="ri-shopping-cart-line"/>
 
 };
 
