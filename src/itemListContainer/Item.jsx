@@ -1,6 +1,6 @@
-const Item = ({productos}) => {
+const Item = ({productos, setCarrito, carrito}) => {
     return(
-    <div key={index}>
+    <div>
         <h3>{productos.title}</h3>
         <img src={productos.thumbnail} alt=""/>
         

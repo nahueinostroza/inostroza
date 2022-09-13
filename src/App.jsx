@@ -3,10 +3,9 @@ import NavBar from './components/Navbar';
 import Itemcount from './itemcount/itemcount';
 import ItemListContainer from './itemListContainer/itemListContainer';
 
-
 function App() {
   const onAdd = (quantity) => {
-    console.log(`comprate ${quantity} unidades`);
+    console.log(`compraste ${quantity} unidades`);
 }
 
   return (
@@ -17,6 +16,7 @@ function App() {
       </div>
     <ItemListContainer greeting="Si gana BOCA 50% de descuento"/>
     </div>
+    
     
 
 
