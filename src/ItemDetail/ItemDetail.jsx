@@ -1,18 +1,25 @@
-import { data } from "autoprefixer"
+import { useCarritoContext } from "../contex/CarritoContext";
 import Itemcount from "../itemcount/itemcount";
 
-export const ItemDetail = () => {
-    return ( 
-        <div className="container">
-        <div className="detail">
-        <img className="detail_image" src= {data.img} alt=""/>
-        <h1>{data.title}</h1>
-       {/*  <div>
-            <Itemcount/>
-        </div> */}
-        </div>
-        </div>
-    );
+
+
+const ItemDetail = ({producto}) => {
+    const {addProducto} = useCarritoContext();
+
+    const onAdd = (quantity) => {
+        addProducto(producto, quantity);
     }
+
+    return (
+        <div>
+            <h1>{producto.title}</h1>
+            <h2>${producto.price}</h2>
+            <img src={producto.thumbnail} alt="Imagen de Item"/>
+            <p>Yo paro en de la 12, la hinchada mas loca,que va a todas partes siguiendo a BOCA.</p>
+            <Itemcount onAdd={onAdd}/>
+        </div>
+    )
+
+}
 
     export default ItemDetail;

@@ -1,10 +1,7 @@
-import { useEffect, useState } from "react"
-import { createPortal } from "react-dom";
+import {useState } from "react"
 
-
-
-const Itemcount = ({stock, initial, onAdd}) => {
-    const [count, setCount] = useState(parseInt(initial)); 
+const Itemcount = ({stock, onAdd}) => {
+    const [count, setCount] = useState(1); 
 
     const decrease = () => {
         setCount(count - 1);
@@ -13,10 +10,6 @@ const Itemcount = ({stock, initial, onAdd}) => {
     const increase = () => {
         setCount(count + 1);
     }
-
-    useEffect(() => {
-        setCount(parseInt(initial));
-    }, [initial])
 
     return (
         <div className="style">

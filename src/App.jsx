@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/Navbar';
-import Itemcount from './itemcount/itemcount';
 import ItemListContainer from './itemListContainer/itemListContainer';
 import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
+import CarritoProvider from './contex/CarritoContext';
+import Cart from './components/Navbar/Cart';
 
 function App() {
   const onAdd = (quantity) => {
@@ -14,23 +15,17 @@ function App() {
     
     <div className="App">
       <BrowserRouter>
+      <CarritoProvider>
       <NavBar/>
       <Routes>
         <Route path='/' element= {<ItemListContainer/>}/>
-        <Route path='/producto/:idProducto' element= {<ItemListContainer/>}/>
         <Route path='/categoria/:idCategoria' element= {<ItemListContainer/>}/>
-        <Route path='/detalle/:idProducto' element= {<ItemDetailContainer/>}/>
+        <Route path='/producto/:idProduct' element= {<ItemDetailContainer/>}/>
+        <Route path='/carrito' element= {<Cart/>}/>
       </Routes>
+      </CarritoProvider>
       </BrowserRouter>
-      {<div>
-      <Itemcount initial={1} stock={10} onAdd={onAdd}/>
-      </div>}
-      <div>
-        <ItemDetailContainer/>    
       </div>
-    <ItemListContainer greeting="Si gana BOCA 50% de descuento"/>
-    </div>
-    
   );
 }
 

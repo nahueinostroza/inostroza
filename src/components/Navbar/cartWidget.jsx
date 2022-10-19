@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 const CartWidget = () => {
-
-
-return <i className="ri-shopping-cart-line"/>
-
-};
+return (
+<Link to={`/carrito`}>
+<i className="ri-shopping-cart-line"/>
+</Link>
+)};
 
 export default CartWidget

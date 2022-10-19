@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import Itemlist from "./Itemlist" 
+import ItemContainer from "./ItemContainer"
+
 
 const ItemListContainer= ({greeting}) => {
     const [productos, setProductos] = useState ([])          
@@ -10,12 +11,13 @@ const ItemListContainer= ({greeting}) => {
     useEffect(() => {            
     buscarProductos() },[])
 
+
     return (
         <div>
         <p style={{color:"blue"}}>
         {greeting}
         </p>
-        <Itemlist productos={productos}/>
+        <ItemContainer productos={productos}/>
         </div>
     )}
 
