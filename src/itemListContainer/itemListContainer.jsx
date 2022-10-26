@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react"
 import ItemContainer from "./ItemContainer"
+import { collection, getDocs, getFirestore} from "firebase/firestore";
 
 
-const ItemListContainer= ({greeting}) => {
-    const [productos, setProductos] = useState ([])          
-    const buscarProductos = async () => {          
-    const response = await fetch ('https://api.mercadolibre.com/sites/MLA/search?q=camisetasbocajuniors%27') 
-    const data = await response.json();   
-    setProductos(data.results);      }        
-    useEffect(() => {            
-    buscarProductos() },[])
+const ItemListContainer = () => {
+    const [productos, setProductos] = useState ([])
+    
+    useEffect(() => {
+        const db = getFirestore();
+        const itemsCollection = collection (db, "items");
+        getDocs(itemsCollection).then((snapshot) => {
+            const docs = (snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})));
+            setProductos(docs)
+        });
+    },[productos])
 
 
     return (
         <div>
-        <p style={{color:"blue"}}>
-        {greeting}
-        </p>
         <ItemContainer productos={productos}/>
         </div>
     )}

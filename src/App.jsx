@@ -5,6 +5,7 @@ import ItemListContainer from './itemListContainer/itemListContainer';
 import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
 import CarritoProvider from './contex/CarritoContext';
 import Cart from './components/Navbar/Cart';
+import ItemListCategory from './itemListContainer/ItemListCategory';
 
 function App() {
   const onAdd = (quantity) => {
@@ -19,7 +20,7 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path='/' element= {<ItemListContainer/>}/>
-        <Route path='/categoria/:idCategoria' element= {<ItemListContainer/>}/>
+        <Route path='/categoria/:idCategoria' element= {<ItemListCategory/>}/>
         <Route path='/producto/:idProduct' element= {<ItemDetailContainer/>}/>
         <Route path='/carrito' element= {<Cart/>}/>
       </Routes>

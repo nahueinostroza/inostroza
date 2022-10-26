@@ -3,6 +3,8 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import CartWidget from './cartWidget'
+import { NavLink } from 'react-router-dom'
+import { Container } from 'postcss'
 
 const navigation = [  
   { name: 'Remeras', href: '#', current: false },

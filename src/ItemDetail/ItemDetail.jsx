@@ -14,8 +14,8 @@ const ItemDetail = ({producto}) => {
         <div>
             <h1>{producto.title}</h1>
             <h2>${producto.price}</h2>
-            <img src={producto.thumbnail} alt="Imagen de Item"/>
-            <p>Yo paro en de la 12, la hinchada mas loca,que va a todas partes siguiendo a BOCA.</p>
+            <img src={producto.imageID} alt="Imagen de Item"/>
+            <p>{producto.description}</p>
             <Itemcount onAdd={onAdd}/>
         </div>
     )
