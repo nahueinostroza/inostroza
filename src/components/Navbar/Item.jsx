@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Item = ({producto}) => {
     return (
         <Card style={{ width: '18rem', margin: "2rem", display: "inline-block" }}>
-        <Card.Img variant="top" src= {producto.thumbnail} />
+        <Card.Img variant="top" src= {producto.image} />
         <Card.Body>
         <Card.Title>{producto.title}</Card.Title>
         <Card.Text></Card.Text>

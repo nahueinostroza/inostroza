@@ -10,7 +10,7 @@ const ItemListCategory = ({setCarrito, carrito}) => {
     
     useEffect(() => {
         const db = getFirestore();
-        const q = query(collection (db, "items"), where("categoryId", "==", `${idCategoria}`));
+        const q = query(collection (db, "Productos"), where("category", "==", `${idCategoria}`));
         getDocs(q).then((snapshot) => {
             const docs = (snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})));
             setProductos(docs)
